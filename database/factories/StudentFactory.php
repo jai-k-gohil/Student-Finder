@@ -13,6 +13,5 @@ $factory->define(\App\Student::class, function (Faker $faker) {
         'phone' => $faker->phoneNumber,
         'city' => $faker->city,
         'branch' => "Information Technology",
-        'DOB' => $faker->date(),
     ];
 });

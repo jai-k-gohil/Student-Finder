@@ -21,7 +21,6 @@ class CreateStudentsTable extends Migration
             $table->string('email');
             $table->string('city');
             $table->string('branch');
-            $table->date('DOB');
             $table->timestamps();
         });
     }

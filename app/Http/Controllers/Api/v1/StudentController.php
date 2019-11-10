@@ -38,8 +38,7 @@ class StudentController extends  \App\Http\Controllers\Controller
             'email'         => 'required',
             'phone'         => 'required',
             'city'          => 'required',
-            'branch'          => 'required',
-            'DOB'          => 'required',
+            'branch'        => 'required',
         ]);
 
         $student = Student::create($request->all());
@@ -55,7 +54,6 @@ class StudentController extends  \App\Http\Controllers\Controller
     public function update(Student $student, Request $request): StudentResource
     {
         $student->update($request->all());
-
         return new StudentResource($student);
     }
 

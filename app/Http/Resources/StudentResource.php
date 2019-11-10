@@ -23,7 +23,6 @@ class StudentResource extends JsonResource
             'email' => $this->email,
             'city' => $this->city,
             'branch' => $this->branch,
-            'DOB' => $this->DOB,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
