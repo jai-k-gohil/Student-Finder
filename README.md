@@ -33,11 +33,17 @@ php artisan key:generate
  to generate an application key for this app to run and you are ready to go.
  
  ### API Routes
- | HTTP Method	| Path | Action | Scope | Desciption  |
- | ----- | ----- | ----- | ---- |------------- |
- | GET      | /students | index | students:list | Get all students
- | POST     | /student | store | student:create | Create an student
- | GET      | /student/{student_id} | show | student:read |  Fetch an student by id
- | PUT      | /student/{student_id} | update | student:write | Update an student by id
- | DELETE      | /student/{student_id} | destroy | student:delete | Delete an student by id
-
+ ```php
+ Route::prefix('v1')->group(function(){
+     Route::apiResource('/student', 'Api\v1\StudentController')
+         ->only(['show','destroy','update','store']);
+ 
+     Route::apiResource('/students', 'Api\v1\StudentController')
+         ->only('index');
+ });
+ 
+ Route::prefix('v2')->group(function(){
+     Route::apiResource('/student', 'Api\v2\StudentController')
+         ->only('show');
+ });
+ ```
